@@ -1,11 +1,11 @@
 pragma solidity ^0.4.19;
 
 contract Vote {
-	mapping (bytes ==> uint8) public votesReceived
+	mapping (bytes32 => uint8) public votesReceived;
 	bytes32[] public ballotList;
 
-	function Vote(bytes32[] ballotNames) {
-		ballotList = ballotNames;
+	function Vote(bytes32[] ballotItems) {
+		ballotList = ballotItems;
 	}
 
 	function totalVotes(bytes32 ballotItem) returns (uint8) {
